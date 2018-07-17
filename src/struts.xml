@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE struts PUBLIC
+        "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+        "http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>
+    <package name="hibernate" extends="struts-default">
+        <action name="savePerson" class="ml.battlecall.action.PersonAction" method="savePerson">
+         <result name="success">/listAll.jsp</result>
+        </action>
+
+
+        <action name="deletePerson" class="ml.battlecall.action.PersonAction" method="deletePerson">
+            <result name="success">/listAll.jsp</result>
+        </action>
+
+        <action name="willupdatePerson" class="ml.battlecall.action.PersonAction" method="getSinglePerson">
+            <result name="success">/updatePerson.jsp</result>
+        </action>
+
+
+        <action name="getSinglePerson" class="ml.battlecall.action.PersonAction" method="getSinglePerson">
+            <result name="success">/detail.jsp</result>
+        </action>
+
+        <action name="updatePerson" class="ml.battlecall.action.PersonAction" method="updatePerson">
+            <result name="success">/listAll.jsp</result>
+        </action>
+
+
+
+
+    </package>
+</struts>
