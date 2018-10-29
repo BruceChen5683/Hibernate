@@ -16,6 +16,35 @@ public class HibernateTest2 {
     public static void main(String[] args) {
         Session session = HibernateUtils.openSession();
         Transaction transaction = null;
+
+        /*
+        *  查询
+        * */
+
+        try {
+
+            transaction = session.beginTransaction();
+
+            Customer customer = session.get(Customer.class,new Long(4));
+
+            System.out.println("HibernateTest2.main  "+customer.getName());
+
+//            System.out.println("HibernateTest2.main "+customer.getOrders());
+            for (Order order:customer.getOrders()){
+                System.out.println("HibernateTest2.main "+order.getOrderName());
+            }
+            transaction.commit();
+
+
+        }catch (Exception e){
+            if (null != transaction){
+                transaction.rollback();
+            }
+        }finally {
+            HibernateUtils.close(session);
+        }
+       /*  增
+
         try{
 
             transaction = session.beginTransaction();
@@ -53,6 +82,8 @@ public class HibernateTest2 {
         }finally {
             HibernateUtils.close(session);
         }
+
+        */
 
     }
 }

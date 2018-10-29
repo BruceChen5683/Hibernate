@@ -9,7 +9,7 @@ public class Customer {
     private Long id;
     private String name;
     //Set List 配置方式不一样
-    private Set<Order> orders;//一对多
+    private Set<Order> orders;//一对多   Set存储是用hashcode无顺序
 
     public Long getId() {
         return id;
