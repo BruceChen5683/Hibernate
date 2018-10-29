@@ -7,6 +7,7 @@ import org.hibernate.Session;
 import org.hibernate.Transaction;
 
 import java.util.HashSet;
+import java.util.Set;
 
 /**
  * Created by chenjianliang on 2018/10/29.
@@ -20,20 +21,23 @@ public class HibernateTest2 {
         /*
         *  查询
         * */
+        Customer customer = null;
 
         try {
 
             transaction = session.beginTransaction();
 
-            Customer customer = session.get(Customer.class,new Long(4));
+            customer = session.get(Customer.class,new Long(4));
 
             System.out.println("HibernateTest2.main  "+customer.getName());
 
+//            customer.getOrders();
 //            System.out.println("HibernateTest2.main "+customer.getOrders());
-            for (Order order:customer.getOrders()){
-                System.out.println("HibernateTest2.main "+order.getOrderName());
-            }
+
+
             transaction.commit();
+
+
 
 
         }catch (Exception e){
@@ -42,6 +46,12 @@ public class HibernateTest2 {
             }
         }finally {
             HibernateUtils.close(session);
+
+
+
+            for (Order order:customer.getOrders()){
+                System.out.println("HibernateTest2.main "+order.getOrderName());
+            }
         }
        /*  增
 

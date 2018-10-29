@@ -16,7 +16,11 @@
         <!--cascade save-update   主对象保存或者更新的时候   其他也会保存，更新-->
         <!--cascade none 不级联-->
         <!--invers true,一对多  多的一方维护关系  e.g.u 全国人民认识胡哥，只需要维护犬儒哟-->
-        <set name="orders" cascade="none" inverse="true">
+
+        <!--lazy 是否延迟加载，默认true  或者提前使用多的一方-->
+
+
+        <set name="orders" cascade="none" inverse="true" lazy="false">
             <key column="CUSTOMER_ID"></key>
             <one-to-many class="ml.battlecall.reflect.Order"></one-to-many>
         </set>
