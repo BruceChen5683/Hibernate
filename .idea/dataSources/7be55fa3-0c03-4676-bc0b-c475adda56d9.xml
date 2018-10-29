@@ -12,71 +12,104 @@
     <schema id="6" parent="1" name="performance_schema"/>
     <schema id="7" parent="1" name="student"/>
     <schema id="8" parent="1" name="sys"/>
-    <table id="9" parent="2" name="people"/>
-    <table id="10" parent="2" name="person"/>
-    <column id="11" parent="9" name="id">
+    <table id="9" parent="2" name="CUSTOMERS"/>
+    <table id="10" parent="2" name="ORDERS"/>
+    <table id="11" parent="2" name="people"/>
+    <table id="12" parent="2" name="person"/>
+    <column id="13" parent="9" name="ID">
       <Position>1</Position>
       <DataType>bigint(20)|0</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="12" parent="9" name="username">
+    <column id="14" parent="9" name="NAME">
+      <Position>2</Position>
+      <DataType>varchar(50)|0</DataType>
+    </column>
+    <key id="15" parent="9" name="PRIMARY">
+      <ColNames>ID</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="16" parent="10" name="ID">
+      <Position>1</Position>
+      <DataType>bigint(20)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="17" parent="10" name="ORDER_NUMBER">
+      <Position>2</Position>
+      <DataType>varchar(50)|0</DataType>
+    </column>
+    <column id="18" parent="10" name="CUSTOMER_ID">
+      <Position>3</Position>
+      <DataType>bigint(20)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <key id="19" parent="10" name="PRIMARY">
+      <ColNames>ID</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="20" parent="11" name="id">
+      <Position>1</Position>
+      <DataType>bigint(20)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="21" parent="11" name="username">
       <Position>2</Position>
       <DataType>varchar(45)|0</DataType>
     </column>
-    <column id="13" parent="9" name="password">
+    <column id="22" parent="11" name="password">
       <Position>3</Position>
       <DataType>varchar(45)|0</DataType>
     </column>
-    <column id="14" parent="9" name="telphone">
+    <column id="23" parent="11" name="telphone">
       <Position>4</Position>
       <DataType>int(11)|0</DataType>
     </column>
-    <column id="15" parent="9" name="gender">
+    <column id="24" parent="11" name="gender">
       <Position>5</Position>
       <DataType>char(1)|0</DataType>
     </column>
-    <column id="16" parent="9" name="graduation">
+    <column id="25" parent="11" name="graduation">
       <Position>6</Position>
       <DataType>bit(1)|0</DataType>
     </column>
-    <column id="17" parent="9" name="birthday">
+    <column id="26" parent="11" name="birthday">
       <Position>7</Position>
       <DataType>date|0</DataType>
     </column>
-    <column id="18" parent="9" name="marryTime">
+    <column id="27" parent="11" name="marryTime">
       <Position>8</Position>
       <DataType>timestamp|0</DataType>
     </column>
-    <column id="19" parent="9" name="file">
+    <column id="28" parent="11" name="file">
       <Position>9</Position>
       <DataType>blob|0</DataType>
     </column>
-    <key id="20" parent="9" name="PRIMARY">
+    <key id="29" parent="11" name="PRIMARY">
       <ColNames>id</ColNames>
       <Primary>1</Primary>
     </key>
-    <column id="21" parent="10" name="id">
+    <column id="30" parent="12" name="id">
       <Position>1</Position>
       <DataType>int(10) unsigned|0</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="22" parent="10" name="username">
+    <column id="31" parent="12" name="username">
       <Position>2</Position>
       <DataType>varchar(45)|0</DataType>
     </column>
-    <column id="23" parent="10" name="password">
+    <column id="32" parent="12" name="password">
       <Position>3</Position>
       <DataType>varchar(45)|0</DataType>
     </column>
-    <column id="24" parent="10" name="age">
+    <column id="33" parent="12" name="age">
       <Position>4</Position>
       <DataType>int(11)|0</DataType>
     </column>
-    <column id="25" parent="10" name="registerDate">
+    <column id="34" parent="12" name="registerDate">
       <Position>5</Position>
       <DataType>datetime|0</DataType>
     </column>
-    <key id="26" parent="10" name="PRIMARY">
+    <key id="35" parent="12" name="PRIMARY">
       <ColNames>id</ColNames>
       <Primary>1</Primary>
     </key>

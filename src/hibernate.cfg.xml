@@ -19,5 +19,9 @@
 
         <mapping resource="People.hbm.xml"></mapping>
 
+        <mapping resource="Order.hbm.xml"></mapping>
+
+        <mapping resource="Customer.hbm.xml"></mapping>
+
     </session-factory>
 </hibernate-configuration>

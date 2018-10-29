@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://hibernate.sourceforg.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="ml.battlecall.reflect.Order" table="ORDERS">
+        <id name="id" column="id" type="long">
+            <generator class="increment"></generator>
+        </id>
+
+        <property name="orderName" type="string" column="ORDER_NUMBER">
+            <!--<column name="ORDER_NUMBER" length="50"></column>-->
+        </property>
+
+        <!-- 如果不需要通过order查询customer 可以删除many-to-one -->
+        <many-to-one name="customer" class="ml.battlecall.reflect.Customer" column="CUSTOMER_ID">
+        </many-to-one>
+
+    </class>
+</hibernate-mapping>
