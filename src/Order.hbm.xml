@@ -13,7 +13,7 @@
         </property>
 
         <!-- 如果不需要通过order查询customer 可以删除many-to-one -->
-        <many-to-one name="customer" class="ml.battlecall.reflect.Customer" column="CUSTOMER_ID">
+        <many-to-one name="customer" class="ml.battlecall.reflect.Customer" column="CUSTOMER_ID" lazy="false">
         </many-to-one>
 
     </class>

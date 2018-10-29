@@ -21,23 +21,13 @@ public class HibernateTest2 {
         /*
         *  查询
         * */
-        Customer customer = null;
-
-        try {
-
+        Order order = null;
+        try{
             transaction = session.beginTransaction();
 
-            customer = session.get(Customer.class,new Long(4));
 
-            System.out.println("HibernateTest2.main  "+customer.getName());
-
-//            customer.getOrders();
-//            System.out.println("HibernateTest2.main "+customer.getOrders());
-
-
-            transaction.commit();
-
-
+            order = session.get(Order.class,new Long(1));
+            System.out.println("HibernateTest2.main "+order.getOrderName());
 
 
         }catch (Exception e){
@@ -47,12 +37,41 @@ public class HibernateTest2 {
         }finally {
             HibernateUtils.close(session);
 
-
-
-            for (Order order:customer.getOrders()){
-                System.out.println("HibernateTest2.main "+order.getOrderName());
-            }
+            order.getCustomer().getName();
         }
+
+//        Customer customer = null;
+//
+//        try {
+//
+//            transaction = session.beginTransaction();
+//
+//            customer = session.get(Customer.class,new Long(4));
+//
+//            System.out.println("HibernateTest2.main  "+customer.getName());
+//
+////            customer.getOrders();
+////            System.out.println("HibernateTest2.main "+customer.getOrders());
+//
+//
+//            transaction.commit();
+//
+//
+//
+//
+//        }catch (Exception e){
+//            if (null != transaction){
+//                transaction.rollback();
+//            }
+//        }finally {
+//            HibernateUtils.close(session);
+//
+//
+//
+//            for (Order order:customer.getOrders()){
+//                System.out.println("HibernateTest2.main "+order.getOrderName());
+//            }
+//        }
        /*  增
 
         try{
