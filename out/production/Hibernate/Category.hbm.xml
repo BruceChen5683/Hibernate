@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://hibernate.sourceforg.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="ml.battlecall.h3.Category" table="CATEGORIES">
+        <id name="id" column="ID" type="long">
+            <generator class="increment"></generator>
+        </id>
+
+        <property name="name" type="string" column="NAME" length="50" >
+
+        </property>
+
+        <set name="childCategories" cascade="all" inverse="true">
+            <key column="CATEGORY_ID"></key>
+            <one-to-many class="ml.battlecall.h3.Category"></one-to-many>
+        </set>
+
+        <many-to-one name="parentCategory" class="ml.battlecall.h3.Category" column="CATEGORY_ID">
+        </many-to-one>
+
+
+
+    </class>
+</hibernate-mapping>

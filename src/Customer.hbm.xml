@@ -19,6 +19,13 @@
 
         <!--lazy 是否延迟加载，默认true  或者提前使用多的一方-->
 
+        <!--casecade
+        delete  当通过Sesssion delete
+        all
+        delete-orphan
+         all-delete-orphan
+         -->
+
 
         <set name="orders" cascade="none" inverse="true" lazy="false">
             <key column="CUSTOMER_ID"></key>

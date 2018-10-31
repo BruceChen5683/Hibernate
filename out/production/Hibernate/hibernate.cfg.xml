@@ -23,5 +23,7 @@
 
         <mapping resource="Customer.hbm.xml"></mapping>
 
+        <mapping resource="Category.hbm.xml"></mapping>
+
     </session-factory>
 </hibernate-configuration>
