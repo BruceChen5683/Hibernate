@@ -47,11 +47,12 @@ public class HibernateTest3 {
 //            category3.getChildCategories().add(category7);
 //
 //
-//            session.save(category1);
+//            session.save(category1);//保存
 
             Category category = session.get(Category.class,new Long(1));
 
-            System.out.println("HibernateTest3.main "+category.getChildCategories().iterator().next().getName());
+            session.delete(category);//删除
+//            System.out.println("HibernateTest3.main "+category.getChildCategories().iterator().next().getName());  //查询
 
 
             transaction.commit();
