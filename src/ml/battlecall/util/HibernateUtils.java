@@ -20,13 +20,13 @@ public class HibernateUtils {
 
     public static Session openSession(){
 
-//        if(sessionFactory == null){
-//            try {
-//                sessionFactory = new Configuration().configure().buildSessionFactory();
-//            }catch (Exception e){
-//                e.printStackTrace();
-//            }
-//        }
+        if(sessionFactory == null){
+            try {
+                sessionFactory = new Configuration().configure().buildSessionFactory();
+            }catch (Exception e){
+                e.printStackTrace();
+            }
+        }
         return sessionFactory.openSession();
     }
 
