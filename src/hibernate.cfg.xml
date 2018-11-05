@@ -17,13 +17,17 @@
         <!--显示heibernate自动生产的sql-->
         <property name="show_sql">true</property>
 
-        <mapping resource="People.hbm.xml"></mapping>
+        <!--<mapping resource="People.hbm.xml"></mapping>-->
 
-        <mapping resource="Order.hbm.xml"></mapping>
+        <!--<mapping resource="Order.hbm.xml"></mapping>-->
 
-        <mapping resource="Customer.hbm.xml"></mapping>
+        <!--<mapping resource="Customer.hbm.xml"></mapping>-->
 
-        <mapping resource="Category.hbm.xml"></mapping>
+        <!--<mapping resource="Category.hbm.xml"></mapping>-->
+
+        <mapping resource="Student.hbm.xml"></mapping>
+        <mapping resource="IDCard.hbm.xml"></mapping>
+
 
     </session-factory>
 </hibernate-configuration>
