@@ -3,7 +3,7 @@
         "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
         "http://hibernate.sourceforg.net/hibernate-mapping-3.0.dtd">
 <hibernate-mapping>
-    <class name="ml.battlecall.info.IDCard" table="idcard">
+    <class name="ml.battlecall.info.IDCard" table="idcard" lazy="true">
 
         <!--foreign 依据student中的主键生成此ID-->
         <id name="id" column="ID" type="string">
