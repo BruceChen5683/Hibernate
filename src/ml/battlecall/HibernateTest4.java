@@ -82,6 +82,7 @@ public class HibernateTest4 {
         try{
             transaction = session.beginTransaction();
             student = session.get(Student.class,"402881ed66e1344d0166e1344fdb0000");
+            student.setName("hy");
             transaction.commit();
 
         }catch (Exception e){
@@ -91,7 +92,7 @@ public class HibernateTest4 {
         }finally {
             HibernateUtils.close(session);
 
-            System.out.println("HibernateTest4.main "+ student.getIdCard().getNumber());
+            System.out.println("HibernateTest4.main "+ student.getName());
 
         }
     }
