@@ -75,7 +75,7 @@ public class HibernateTest4 {
          * 延迟加载
          * */
 
-        Session session = HibernateUtils.openSession();
+        /*Session session = HibernateUtils.openSession();
         Transaction transaction = null;
         Student student = null;
 
@@ -83,6 +83,27 @@ public class HibernateTest4 {
             transaction = session.beginTransaction();
             student = session.get(Student.class,"402881ed66e1344d0166e1344fdb0000");
             student.setName("hy");
+            transaction.commit();
+
+        }catch (Exception e){
+            if (null != transaction){
+                transaction.rollback();
+            }
+        }finally {
+            HibernateUtils.close(session);
+
+            System.out.println("HibernateTest4.main "+ student.getName());
+
+        }*/
+
+        Session session = HibernateUtils.openSession();
+        Transaction transaction = null;
+        Student student = null;
+
+        try{
+            transaction = session.beginTransaction();
+            student = session.get(Student.class,"402881ed66e1344d0166e1344fdb0000");
+            session.delete(student);
             transaction.commit();
 
         }catch (Exception e){
