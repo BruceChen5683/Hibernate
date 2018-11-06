@@ -14,6 +14,7 @@
                 join   one-to-one 默认join  左外连接语句查询
                 select     select语句查询
         -->
+
         <one-to-one name="idCard" class="ml.battlecall.info.IDCard" cascade="all" fetch="select" constrained="true"></one-to-one>
 
     </class>

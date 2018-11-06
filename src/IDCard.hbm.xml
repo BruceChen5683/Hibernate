@@ -5,20 +5,28 @@
 <hibernate-mapping>
     <class name="ml.battlecall.info.IDCard" table="idcard" lazy="true">
 
+        <!--&lt;!&ndash;foreign 依据student中的主键生成此ID&ndash;&gt;-->
+        <!--<id name="id" column="ID" type="string">-->
+            <!--<generator class="foreign">-->
+                <!--<param name="property">student</param>-->
+            <!--</generator>-->
+        <!--</id>-->
+
+
+        <!--<property name="number" column="NUMBER" type="string">-->
+
+        <!--</property>-->
+        <!--<one-to-one name="student" class="ml.battlecall.info.Student"></one-to-one>-->
+
+
         <!--foreign 依据student中的主键生成此ID-->
         <id name="id" column="ID" type="string">
-            <generator class="foreign">
-                <param name="property">student</param>
-            </generator>
+            <generator class="uuid"></generator>
         </id>
-
-
         <property name="number" column="NUMBER" type="string">
 
         </property>
-        <one-to-one name="student" class="ml.battlecall.info.Student">
-
-        </one-to-one>
-
+        <!--unique 表示many这一方实际上是唯一的-->
+        <many-to-one name="student" class="ml.battlecall.info.Student" column="student_id" unique="true"></many-to-one>
     </class>
 </hibernate-mapping>

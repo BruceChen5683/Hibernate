@@ -12,7 +12,7 @@ import org.hibernate.Transaction;
 public class HibernateTest4 {
     public static void main(String[] args) {
 
-        /*Student student = new Student();
+        Student student = new Student();
         student.setName("test");
 
         IDCard idCard = new IDCard();
@@ -35,7 +35,7 @@ public class HibernateTest4 {
             }
         }finally {
             HibernateUtils.close(session);
-        }*/
+        }
 
 
         /**
@@ -96,7 +96,10 @@ public class HibernateTest4 {
 
         }*/
 
-        Session session = HibernateUtils.openSession();
+        /**
+         * delete
+         * */
+        /*Session session = HibernateUtils.openSession();
         Transaction transaction = null;
         Student student = null;
 
@@ -115,6 +118,6 @@ public class HibernateTest4 {
 
             System.out.println("HibernateTest4.main "+ student.getName());
 
-        }
+        }*/
     }
 }
