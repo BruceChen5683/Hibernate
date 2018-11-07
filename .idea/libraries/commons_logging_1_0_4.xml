@@ -3,14 +3,11 @@
     <CLASSES>
       <root url="jar://$PROJECT_DIR$/web/WEB-INF/lib/commons-logging-1.0.4.jar!/" />
       <root url="jar://$PROJECT_DIR$/web/WEB-INF/lib/dom4j-1.6.1.jar!/" />
-      <root url="jar://$PROJECT_DIR$/web/WEB-INF/lib/javassist-3.7.ga.jar!/" />
       <root url="jar://$PROJECT_DIR$/web/WEB-INF/lib/ognl-3.0.jar!/" />
       <root url="jar://$PROJECT_DIR$/web/WEB-INF/lib/struts2-core-2.2.1.1.jar!/" />
       <root url="jar://$PROJECT_DIR$/web/WEB-INF/lib/xwork-core-2.2.1.1.jar!/" />
     </CLASSES>
     <JAVADOC />
-    <SOURCES>
-      <root url="jar://$USER_HOME$/.ideaLibSources/struts2-core-2.2.1.1-sources.jar!/" />
-    </SOURCES>
+    <SOURCES />
   </library>
 </component>
