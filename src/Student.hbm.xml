@@ -15,6 +15,17 @@
                 select     select语句查询
         -->
 
+        <!--
+        无constrained
+        Hibernate: insert into student (NAME, ID) values (?, ?)
+        Hibernate: insert into idcard (NUMBER, student_id, ID) values (?, ?, ?)
+
+        有constrained="true"
+        Hibernate: insert into idcard (NUMBER, student_id, ID) values (?, ?, ?)
+        Hibernate: insert into student (NAME, ID) values (?, ?)
+        Hibernate: update idcard set NUMBER=?, student_id=? where ID=?
+
+        -->
         <one-to-one name="idCard" class="ml.battlecall.info.IDCard" cascade="all" fetch="select" constrained="true"></one-to-one>
 
     </class>
