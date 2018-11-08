@@ -58,7 +58,7 @@ public class HibernateTest4 {
 
         try{
             transaction = session.beginTransaction();
-            Student student = session.get(Student.class,"402881ed66e1344d0166e1344fdb0000");
+            Employer student = session.get(Employer.class,"402881ed66e1344d0166e1344fdb0000");
             System.out.println("HibernateTest4.main "+ student.getIdCard().getNumber());
             transaction.commit();
 
@@ -77,11 +77,11 @@ public class HibernateTest4 {
 
         /*Session session = HibernateUtils.openSession();
         Transaction transaction = null;
-        Student student = null;
+        Employer student = null;
 
         try{
             transaction = session.beginTransaction();
-            student = session.get(Student.class,"402881ed66e1344d0166e1344fdb0000");
+            student = session.get(Employer.class,"402881ed66e1344d0166e1344fdb0000");
             student.setName("hy");
             transaction.commit();
 
@@ -101,11 +101,11 @@ public class HibernateTest4 {
          * */
         /*Session session = HibernateUtils.openSession();
         Transaction transaction = null;
-        Student student = null;
+        Employer student = null;
 
         try{
             transaction = session.beginTransaction();
-            student = session.get(Student.class,"402881ed66e1344d0166e1344fdb0000");
+            student = session.get(Employer.class,"402881ed66e1344d0166e1344fdb0000");
             session.delete(student);
             transaction.commit();
 

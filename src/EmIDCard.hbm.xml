@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://hibernate.sourceforg.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="ml.battlecall.hibernate5.EmIDCard" table="emidcard" lazy="false">
+
+        <!--&lt;!&ndash;foreign 依据student中的主键生成此ID&ndash;&gt;-->
+        <id name="id" column="id" type="string">
+            <generator class="foreign">
+                <param name="property">employer</param>
+            </generator>
+        </id>
+
+
+        <property name="number" column="number" type="integer">
+
+        </property>
+
+        <one-to-one name="employer" class="ml.battlecall.hibernate5.Employer" cascade="none"></one-to-one>
+    </class>
+</hibernate-mapping>

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://hibernate.sourceforg.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="ml.battlecall.hibernate5.Team" table="team">
+
+        <id name="id" column="id" type="string">
+            <generator class="uuid"></generator>
+        </id>
+        <property name="name" column="name" type="string">
+
+        </property>
+
+        <!--inverse true 一对多时，多的一方维持关系 -->
+        <set name="employers" lazy="false" cascade="all" inverse="true" fetch="select">
+            <key column="team_id"></key>
+            <one-to-many class="ml.battlecall.hibernate5.Employer"></one-to-many>
+        </set>
+    </class>
+</hibernate-mapping>

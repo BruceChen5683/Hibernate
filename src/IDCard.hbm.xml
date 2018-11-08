@@ -16,7 +16,7 @@
         <!--<property name="number" column="NUMBER" type="string">-->
 
         <!--</property>-->
-        <!--<one-to-one name="student" class="ml.battlecall.info.Student"></one-to-one>-->
+        <!--<one-to-one name="student" class="ml.battlecall.info.Employer"></one-to-one>-->
 
 
         <!--foreign 依据student中的主键生成此ID-->
