@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://hibernate.sourceforg.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="ml.battlecall.hibernate6.Course" table="course">
+        <id name="id" column="ID" type="string">
+            <generator class="uuid"></generator>
+        </id>
+        <property name="name" column="NAME" type="string">
+        </property>
+        <!--table 连接表的名字-->
+        <!--save-update-->
+        <set name="students" table="student2_course" cascade="save-update">
+            <!--key column  与当前表关联多的一方，student表的外键-->
+            <key column="course_id">
+
+            </key>
+            <!--cloumn 连接表中的与当前表关联的  student的 id-->
+            <many-to-many class="ml.battlecall.hibernate6.Course" column="student2_id">
+
+            </many-to-many>
+        </set>
+
+    </class>
+</hibernate-mapping>
