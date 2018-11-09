@@ -12,7 +12,7 @@
         <!--table 连接表的名字-->
         <!--save-update-->
         <!--inverse 谁来维护这个表关系-->
-        <set name="students" table="student2_course" cascade="save-update" >
+        <set name="students" table="student2_course" cascade="save-update" inverse="true">
             <!--key column  与当前表关联多的一方，student表的外键-->
             <key column="course_id">
 
