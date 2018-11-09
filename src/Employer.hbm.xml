@@ -14,7 +14,7 @@
         <one-to-one name="emIDCard" class="ml.battlecall.hibernate5.EmIDCard" cascade="all"></one-to-one>
 
         <!--fetch="join"-->
-        <many-to-one name="team" class="ml.battlecall.hibernate5.Team" column="team_id"  fetch="join" cascade="all"></many-to-one>
+        <many-to-one name="team" class="ml.battlecall.hibernate5.Team" column="team_id"   cascade="all"></many-to-one>
 
 
     </class>

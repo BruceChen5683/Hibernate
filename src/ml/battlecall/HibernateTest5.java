@@ -41,9 +41,13 @@ public class HibernateTest5 {
 
             System.out.println("HibernateTest5.main  ---");
 
-            Team team1 = session.get(Team.class,"ff80818166f0b9520166f0b9534f0000");
+//            Team team1 = session.get(Team.class,"ff80818166f0b9520166f0b9534f0000");
+//
+//            System.out.println("HibernateTest5.main "+team1.getName());
 
-            System.out.println("HibernateTest5.main "+team1.getName());
+            Employer employer = session.get(Employer.class,"ff80818166f0bacf0166f0bad0b00001");
+
+            System.out.println("HibernateTest5.main"+employer.getName());
             transaction.commit();
 
         }catch (Exception e){

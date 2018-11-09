@@ -17,6 +17,9 @@
         <!--显示heibernate自动生产的sql-->
         <property name="show_sql">true</property>
 
+
+        <!--<property name="max_fetch_depth">2</property>-->
+
         <!--<mapping resource="People.hbm.xml"></mapping>-->
 
         <!--<mapping resource="Order.hbm.xml"></mapping>-->
