@@ -3,7 +3,7 @@
         "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
         "http://hibernate.sourceforg.net/hibernate-mapping-3.0.dtd">
 <hibernate-mapping>
-    <class name="ml.battlecall.hibernateMap.Team2" table="team2">
+    <class name="ml.battlecall.list.Team3" table="team3">
 
         <id name="id" column="id" type="string">
             <generator class="uuid"></generator>
@@ -13,15 +13,9 @@
         </property>
 
 
-        <map name="students" table="studentsMap">
+        <set name="student3" table="student3">
             <key column="team_id"></key>
-            <!--指定Map中的key、value值-->
-            <!--index element-->
-            <index column="key_name" type="java.lang.String"></index>
-            <element column="value_description" type="java.lang.String"></element>
-
-            <!--若 value是对象，则需要新建类,hbm文件-->
-
-        </map>
+            <element column="name" type="java.lang.String"></element>
+        </set>
     </class>
 </hibernate-mapping>
