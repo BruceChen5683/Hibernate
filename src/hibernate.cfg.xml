@@ -35,9 +35,11 @@
         <!--<mapping resource="EmIDCard.hbm.xml"></mapping>-->
         <!--<mapping resource="Team.hbm.xml"></mapping>-->
 
-        <mapping resource="Student2.hbm.xml"></mapping>
-        <mapping resource="Course.hbm.xml"></mapping>
+        <!--<mapping resource="Student2.hbm.xml"></mapping>-->
+        <!--<mapping resource="Course.hbm.xml"></mapping>-->
 
+        <mapping resource="Team2.hbm.xml"></mapping>
+        <mapping resource="TStudent.hbm.xml"></mapping>
 
 
     </session-factory>

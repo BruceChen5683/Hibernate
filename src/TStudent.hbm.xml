@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://hibernate.sourceforg.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="ml.battlecall.hibernateMap.TStudent" table="tstudent">
+        <id name="id" column="ID" type="string">
+            <generator class="uuid"></generator>
+        </id>
+        <property name="name" column="NAME" type="string">
+            <!--<column name="name" length="50"></column>-->
+        </property>
+        <!--fetch 检索的方式，不是检索策略
+                join   one-to-one 默认join  左外连接语句查询
+                select     select语句查询
+        -->
+
+        <!--
+        无constrained
+        Hibernate: insert into student (NAME, ID) values (?, ?)
+        Hibernate: insert into idcard (NUMBER, student_id, ID) values (?, ?, ?)
+
+        有constrained="true"
+        Hibernate: insert into idcard (NUMBER, student_id, ID) values (?, ?, ?)
+        Hibernate: insert into student (NAME, ID) values (?, ?)
+        Hibernate: update idcard set NUMBER=?, student_id=? where ID=?
+
+        -->
+        <!--<one-to-one name="idCard" class="ml.battlecall.info.IDCard" cascade="all" fetch="select" constrained="true"></one-to-one>-->
+
+    </class>
+</hibernate-mapping>

@@ -3,19 +3,23 @@
         "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
         "http://hibernate.sourceforg.net/hibernate-mapping-3.0.dtd">
 <hibernate-mapping>
-    <class name="ml.battlecall.hibernate5.Team" table="team">
+    <class name="ml.battlecall.hibernateMap.Team2" table="team2">
 
         <id name="id" column="id" type="string">
             <generator class="uuid"></generator>
         </id>
-        <property name="name" column="name" type="string">
+        <property name="teamName" column="name" type="string">
 
         </property>
 
-        <!--inverse true 一对多时，多的一方维持关系 -->
-        <set name="employers" lazy="false" cascade="all" inverse="true" fetch="select">
+
+        <map name="students" table="studentsMap">
             <key column="team_id"></key>
-            <one-to-many class="ml.battlecall.hibernate5.Employer"></one-to-many>
-        </set>
+            <!--指定Map中的key、value值-->
+            <!--index element-->
+            <index column="key_name" type="java.lang.String"></index>
+            <element column="value_description" type="java.lang.String"></element>
+
+        </map>
     </class>
 </hibernate-mapping>
