@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://hibernate.sourceforg.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="ml.battlecall.list.Question" table="question">
+
+        <id name="id" column="id" type="string">
+            <generator class="uuid"></generator>
+        </id>
+        <property name="name" column="name" type="string">
+
+        </property>
+
+        <!--此处不需要table-->
+        <!--当前版本inverse=true ，张龙老师练习时的版本inverse=true,index_未生成-->
+        <!--inverse 由于默认多的一方维护？-->
+       <list name="items" cascade="all" inverse="true">
+           <key column="question_id"></key>
+           <!--`index 屏蔽数据库冲突，防止index和数据库的index冲突  或者-->
+           <index column="index_"></index>
+           <one-to-many class="ml.battlecall.list.Item"></one-to-many>
+       </list>
+    </class>
+</hibernate-mapping>

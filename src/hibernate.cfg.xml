@@ -42,7 +42,9 @@
         <!--<mapping resource="TStudent.hbm.xml"></mapping>-->
 
 
-        <mapping resource="Team3.hbm.xml"></mapping>
+        <!--<mapping resource="Team3.hbm.xml"></mapping>-->
 
+        <mapping resource="Question.hbm.xml"></mapping>
+        <mapping resource="Item.hbm.xml"></mapping>
     </session-factory>
 </hibernate-configuration>
