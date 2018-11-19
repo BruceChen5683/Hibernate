@@ -18,7 +18,7 @@
 
 
 
-       <bag name="items" cascade="all" inverse="false">
+       <bag name="items" cascade="all" inverse="true">
            <key column="question_id"></key>
            <one-to-many class="ml.battlecall.bag.BagItem"></one-to-many>
        </bag>
