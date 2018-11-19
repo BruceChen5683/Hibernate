@@ -13,6 +13,7 @@
         </property>
 
 
+        <!--sort="ml.battlecall.MyComparator" 自定义排序-->
         <map name="students" table="studentsMap" sort="natural">
             <key column="team_id"></key>
             <!--指定Map中的key、value值-->
