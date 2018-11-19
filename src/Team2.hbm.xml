@@ -13,7 +13,7 @@
         </property>
 
 
-        <map name="students" table="studentsMap" order-by="key-name asc">
+        <map name="students" table="studentsMap" sort="natural">
             <key column="team_id"></key>
             <!--指定Map中的key、value值-->
             <!--index element-->
