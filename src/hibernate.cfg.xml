@@ -51,5 +51,7 @@
         <!--<mapping resource="BagItem.hbm.xml"></mapping>-->
 
         <mapping resource="MyStudent.hbm.xml"></mapping>
+
+        <mapping resource="MyStudent1.hbm.xml"></mapping>
     </session-factory>
 </hibernate-configuration>

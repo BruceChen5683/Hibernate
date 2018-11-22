@@ -47,7 +47,6 @@ public class HiberateTest55 {
         try {
             transaction = session.beginTransaction();
 
-
             MyStudent myStudent = session.get(MyStudent.class,studentPrimaryKey);
             System.out.println("HiberateTest55.main "+myStudent.getAge());
             System.out.println("HiberateTest55.main "+studentPrimaryKey.getAge());
