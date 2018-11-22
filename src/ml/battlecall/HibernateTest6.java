@@ -1,6 +1,5 @@
 package ml.battlecall;
 
-import ml.battlecall.hibernate5.Employer;
 import ml.battlecall.hibernate6.Course;
 import ml.battlecall.hibernate6.Student2;
 import ml.battlecall.util.HibernateUtils;
