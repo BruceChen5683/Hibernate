@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://hibernate.sourceforg.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="ml.battlecall.hiberantate17.Student10" table="student10">
+
+        <id name="id" column="id" type="string">
+            <generator class="uuid"></generator>
+        </id>
+        <property name="name" column="name" type="string">
+            <!--<column name="name" length="50"></column>-->
+        </property>
+
+        <!--column可以不制定-->
+        <component name="address" class="Address">
+            <property name="homeAddress" type="string" ></property>
+            <property name="schoolAddress" type="string" column="table_school"></property>
+        </component>
+
+
+
+
+    </class>
+</hibernate-mapping>
