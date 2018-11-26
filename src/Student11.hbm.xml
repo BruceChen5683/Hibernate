@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://hibernate.sourceforg.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="ml.battlecall.hiberantate17.Student11" table="student11">
+
+        <id name="name"  type="string">
+            <generator class="uuid"></generator>
+        </id>
+        <property name="address" type="string">
+        </property>
+
+
+        <set name="contacts" table="contacts">
+            <key column="student_id"></key>
+            <composite-element class="ml.battlecall.hiberantate17.Contact">
+
+                <property name="name" type="string"></property>
+                <property name="phone" type="string"></property>
+            </composite-element>
+        </set>
+
+
+
+
+    </class>
+</hibernate-mapping>

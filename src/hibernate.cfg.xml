@@ -54,9 +54,9 @@
         <!--联合主键-->
         <!--<mapping resource="MyStudent.hbm.xml"></mapping>-->
 
-        <mapping resource="MyStudent1.hbm.xml"></mapping>
+        <!--<mapping resource="MyStudent1.hbm.xml"></mapping>-->
 
 
-        <mapping resource="Student10.hbm.xml"></mapping>
+        <mapping resource="Student11.hbm.xml"></mapping>
     </session-factory>
 </hibernate-configuration>
