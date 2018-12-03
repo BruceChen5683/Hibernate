@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://hibernate.sourceforg.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="ml.battlecall.inherit.Person" table="person2">
+        <id name="id"  type="string">
+            <generator class="uuid"></generator>
+        </id>
+
+        <discriminator column="personType" type="string"></discriminator>
+
+        <property name="name" type="string">
+            <!--<column name="name" length="50"></column>-->
+        </property>
+
+        <!--<discriminator column="type" type="string">-->
+        <!--</discriminator>-->
+
+        <subclass name="ml.battlecall.inherit.StudentEP" discriminator-value="student">
+            <property name="cardId" type="string"></property>
+        </subclass>
+
+        <subclass name="ml.battlecall.inherit.Teacher" discriminator-value="teacher">
+            <property name="salary" type="string"></property>
+        </subclass>
+
+    </class>
+</hibernate-mapping>

@@ -9,6 +9,7 @@ import org.hibernate.Transaction;
 import org.hibernate.query.Query;
 
 import java.util.Iterator;
+import java.util.List;
 
 public class HibernateInheritTest {
     public static void main(String[] args) {
@@ -40,11 +41,36 @@ public class HibernateInheritTest {
 //            Query query = session.createQuery("from java.lang.Object");
 
             Query query = session.createQuery("from ml.battlecall.inherit.Person");
-            Iterator iterator = query.iterate();
-            while (iterator.hasNext()){
-                Person p  = (Person) iterator.next();
 
-                System.out.println("HibernateInheritTest.main"+p.getName());
+            //iterate带缓存的，只有真正需要时，才会去加载
+//            Iterator iterator = query.iterate();
+//            while (iterator.hasNext()){
+//
+////                公共信息
+////                Person p  = (Person) iterator.next();
+////                System.out.println("HibernateInheritTest.main"+p.getName());
+//
+//                Object object = iterator.next();
+//                if (object instanceof StudentEP){
+//                    System.out.println("HibernateInheritTest.main "+((StudentEP)object).getCardId());
+//                }
+//
+//                if (object instanceof Teacher){
+//                    System.out.println("HibernateInheritTest.main "+((Teacher)object).getSalary());
+//                }
+//            }
+
+
+            List list = query.list();
+            for (int i =0;i < list.size();i++){
+
+                if (list.get(i) instanceof StudentEP){
+                    System.out.println("HibernateInheritTest.main "+((StudentEP)list.get(i) ).getCardId());
+                }
+
+                if (list.get(i) instanceof Teacher){
+                    System.out.println("HibernateInheritTest.main "+((Teacher)list.get(i) ).getSalary());
+                }
             }
 
             transaction.commit();

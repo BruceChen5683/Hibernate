@@ -57,10 +57,12 @@
         <!--<mapping resource="MyStudent1.hbm.xml"></mapping>-->
 
 
-        <mapping resource="Student11.hbm.xml"></mapping>
+        <!--<mapping resource="Student11.hbm.xml"></mapping>-->
 
-        <mapping resource="Teacher.hbm.xml"></mapping>
+        <!--<mapping resource="Teacher.hbm.xml"></mapping>-->
 
-        <mapping resource="StudentEP.hbm.xml"></mapping>
+        <!--<mapping resource="StudentEP.hbm.xml"></mapping>-->
+
+        <mapping resource="Person2.hbm.xml"></mapping>
     </session-factory>
 </hibernate-configuration>
