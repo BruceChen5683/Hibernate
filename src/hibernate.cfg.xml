@@ -63,6 +63,6 @@
 
         <!--<mapping resource="StudentEP.hbm.xml"></mapping>-->
 
-        <mapping resource="Person2.hbm.xml"></mapping>
+        <mapping resource="Person3.hbm.xml"></mapping>
     </session-factory>
 </hibernate-configuration>

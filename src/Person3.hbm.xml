@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://hibernate.sourceforg.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="ml.battlecall.inherit.Person" table="person3">
+        <id name="id"  type="string">
+            <generator class="uuid"></generator>
+        </id>
+
+
+        <property name="name" type="string"></property>
+
+        <joined-subclass name="ml.battlecall.inherit.Teacher" table="teacher3">
+            <key column="id"></key>
+            <property name="salary" type="string"></property>
+        </joined-subclass>
+
+        <joined-subclass name="ml.battlecall.inherit.StudentEP" table="studentep3">
+            <key column="id"></key>
+            <property name="cardId" type="string"></property>
+        </joined-subclass>
+
+    </class>
+</hibernate-mapping>
