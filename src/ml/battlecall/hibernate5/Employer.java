@@ -11,6 +11,21 @@ public class Employer {
     private EmIDCard emIDCard;
     private Team team;
 
+    public Employer() {
+    }
+
+    public Employer(String id, String name, EmIDCard emIDCard, Team team) {
+        this.id = id;
+        this.name = name;
+        this.emIDCard = emIDCard;
+        this.team = team;
+    }
+
+    public Employer(String name, String id) {
+        this.id = id;
+        this.name = name;
+    }
+
     public String getId() {
         return id;
     }
