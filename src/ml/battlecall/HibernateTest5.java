@@ -4,9 +4,11 @@ import ml.battlecall.hibernate5.EmIDCard;
 import ml.battlecall.hibernate5.Employer;
 import ml.battlecall.hibernate5.Team;
 import ml.battlecall.util.HibernateUtils;
+import org.hibernate.Hibernate;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
 import org.hibernate.query.Query;
+import org.hibernate.type.Type;
 
 import java.util.HashSet;
 import java.util.List;
@@ -80,19 +82,64 @@ public class HibernateTest5 {
              *             }
              */
 
+            /**
+             *  内链接
+             *              Query query = session.createQuery("from Team t join t.employers");
+             *             List list = query.list();
+             *
+             *             for (int i =0;i < list.size();i++){
+             *                 Object[] obj = (Object[]) list.get(i);
+             *                 Team team= (Team) obj[0];
+             *                 Employer employer = (Employer) obj[1];
+             *
+             *                 System.out.println("HibernateTest5.main "+team.getName());
+             *                 System.out.println("HibernateTest5.main" +employer.getName());
+             *
+             *             }
+             *
+             */
 
-            Query query = session.createQuery("from Team t join t.employers");
-            List list = query.list();
 
-            for (int i =0;i < list.size();i++){
-                Object[] obj = (Object[]) list.get(i);
-                Team team= (Team) obj[0];
-                Employer employer = (Employer) obj[1];
+            /**
+             * setEnity
+             *             Team team = session.get(Team.class,"402881f5677b5adc01677b5ade2b0000");
+             *             Query query = session.createQuery("from Employer s where s.team = :myteam");
+             *             query.setEntity("myteam",team);
+             *             List list = query.list();
+             *
+             *             System.out.println("HibernateTest5.main "+list.size());
+             */
 
-                System.out.println("HibernateTest5.main "+team.getName());
-                System.out.println("HibernateTest5.main" +employer.getName());
 
-            }
+            /**
+             *  setParameter??? TOOD  check此方法参数
+             *
+             *              Team team = session.get(Team.class,"402881f5677b5adc01677b5ade2b0000");
+             *             Query query = session.createQuery("from Employer s where s.team = :myteam");
+             *             query.setParameter("myteam",team,Hibernate.entity(Team.class));
+             *             List list = query.list();
+             *
+             *             System.out.println("HibernateTest5.main "+list.size());
+             *
+             */
+
+            /**
+             * createFilter
+             *
+             *             Team team = session.get(Team.class,"402881f5677b5adc01677b5a" +
+             *                     "de2b0000");
+             *             Query query = session.createFilter(team.getEmployers(),"where name = 'hy'");
+             *
+             *             List list = query.list();
+             *             for (int i = 0; i < list.size();i++){
+             *                 Employer employer = (Employer) list.get(i);
+             *                 System.out.println("HibernateTest5.main "+employer.getEmIDCard().getNumber());
+             *             }
+             *
+             */
+
+
+
 
 
 
@@ -104,6 +151,7 @@ public class HibernateTest5 {
             transaction.commit();
 
         }catch (Exception e){
+            e.printStackTrace();
             if (null != transaction){
                 transaction.rollback();
             }
