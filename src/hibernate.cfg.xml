@@ -11,6 +11,7 @@
         <property name="connection.password">123456</property>
         <property name="connection.driver_class">com.mysql.jdbc.Driver</property>
 
+        <property name="format_sql">true</property>
         <!--方言-->
         <property name="dialect">org.hibernate.dialect.MySQL5Dialect</property>
 

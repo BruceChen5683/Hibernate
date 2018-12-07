@@ -4,9 +4,12 @@ import ml.battlecall.hibernate5.EmIDCard;
 import ml.battlecall.hibernate5.Employer;
 import ml.battlecall.hibernate5.Team;
 import ml.battlecall.util.HibernateUtils;
+import org.hibernate.Criteria;
 import org.hibernate.Hibernate;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
+import org.hibernate.criterion.Order;
+import org.hibernate.criterion.Restrictions;
 import org.hibernate.query.Query;
 import org.hibernate.type.Type;
 
@@ -138,6 +141,23 @@ public class HibernateTest5 {
              *
              */
 
+
+            /**
+             *  QBC QBC QBC
+             */
+
+            Criteria criteria = session.createCriteria(Employer.class)//employer整个表
+                            .add(Restrictions.eq("name","hy"))//限制条件 属性名字为hy
+                            .addOrder(Order.desc("id"));//降序
+
+
+            List list = criteria.list();
+
+            for (int i = 0;i < list.size();i++){
+                Employer employer = (Employer) list.get(i);
+                System.out.println("HibernateTest5.main  :"+ employer.getId());
+            }
+            System.out.println("HibernateTest5.main " + list.size());
 
 
 
