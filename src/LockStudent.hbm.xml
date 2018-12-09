@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://hibernate.sourceforg.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+
+    <class name="ml.battlecall.lock.Student" table="lockstudent">
+        <id name="id" type="string">
+            <generator class="uuid"></generator>
+        </id>
+<!--version顺序 在property之前-->
+        <version name="version" column="version"></version>
+
+        <property name="name" type="string">
+        </property>
+    </class>
+</hibernate-mapping>
