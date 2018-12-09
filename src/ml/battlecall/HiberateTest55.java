@@ -45,7 +45,7 @@ public class HiberateTest55 {
         Session session = HibernateUtils.openSession();
         Transaction transaction = null;
         try {
-            transaction = session.beginTransaction();
+            transaction = session.beginTransaction();//对应底层　Ｃｏｎｎｅｃｔｉｏｎ setAutoCommit(false)
 
             MyStudent myStudent = session.get(MyStudent.class,studentPrimaryKey);
             System.out.println("HiberateTest55.main "+myStudent.getAge());
