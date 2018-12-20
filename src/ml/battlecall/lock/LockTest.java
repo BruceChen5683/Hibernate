@@ -15,39 +15,39 @@ public class LockTest {
 
 
         try {
-//            transaction = session1.beginTransaction();
+            transaction = session1.beginTransaction();
 
-//            Student student = new Student();
-//            student.setName("test");
-//            student.setId("1");
+            Student student = new Student();
+            student.setName("test");
+            student.setId("1");
+
+            session1.save(student);
+
+//            Student student1 = (Student) session1.createQuery("from  Student s where s.name = :name").setString("name","test").uniqueResult();
 //
-//            session.save(student);
+//            Student student2 = (Student) session2.createQuery("from  Student s where s.name = :name").setString("name","test").uniqueResult();
+//
+//            System.out.println("LockTest.main "+student1.getVersion());
+//            System.out.println("LockTest.main "+student2.getVersion());
+//
+//
+//
+//            transaction1 = session1.beginTransaction();
+//            student1.setName("test1");
+//            transaction1.commit();
+//
+//            System.out.println("LockTest.main "+student1.getVersion());
+//            System.out.println("LockTest.main "+student2.getVersion());
+//
+//
+//            transaction2 = session2.beginTransaction();
+//            student2.setName("test2");
+//            transaction2.commit();
+//
+//            System.out.println("LockTest.main "+student1.getVersion());
+//            System.out.println("LockTest.main "+student2.getVersion());
 
-            Student student1 = (Student) session1.createQuery("from  Student s where s.name = :name").setString("name","test").uniqueResult();
-
-            Student student2 = (Student) session2.createQuery("from  Student s where s.name = :name").setString("name","test").uniqueResult();
-
-            System.out.println("LockTest.main "+student1.getVersion());
-            System.out.println("LockTest.main "+student2.getVersion());
-
-
-
-            transaction1 = session1.beginTransaction();
-            student1.setName("test1");
-            transaction1.commit();
-
-            System.out.println("LockTest.main "+student1.getVersion());
-            System.out.println("LockTest.main "+student2.getVersion());
-
-
-            transaction2 = session2.beginTransaction();
-            student2.setName("test2");
-            transaction2.commit();
-
-            System.out.println("LockTest.main "+student1.getVersion());
-            System.out.println("LockTest.main "+student2.getVersion());
-
-//            transaction.commit();
+            transaction.commit();
         }catch (Exception e){
             e.printStackTrace();
             if (null != transaction){

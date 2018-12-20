@@ -21,6 +21,11 @@
         <!--显示heibernate自动生产的sql-->
         <property name="show_sql">true</property>
 
+        <!--<event type="load">-->
+            <!--<listener class="ml.battlecall.TestLoadEventListener"></listener>-->
+            <!--<listener class="org.hibernate.event.internal.DefaultLoadEventListener"></listener>-->
+        <!--</event>-->
+
 
         <!--<property name="max_fetch_depth">2</property>-->
 

@@ -1,5 +1,6 @@
 package ml.battlecall.util;
 
+import ml.battlecall.TestInterceptor;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.cfg.Configuration;
@@ -14,7 +15,7 @@ public class HibernateUtils {
 
     static {
         try {
-            sessionFactory = new Configuration().configure().buildSessionFactory();
+            sessionFactory = new Configuration().setInterceptor(new TestInterceptor()).configure().buildSessionFactory();
         }catch (Exception e){
             e.printStackTrace();
         }
