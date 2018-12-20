@@ -1,12 +1,13 @@
 package ml.battlecall;
 
 import org.hibernate.HibernateException;
-import org.hibernate.event.spi.LoadEvent;
-import org.hibernate.event.spi.LoadEventListener;
+import org.hibernate.event.spi.SaveOrUpdateEvent;
+import org.hibernate.event.spi.SaveOrUpdateEventListener;
 
-public class TestLoadEventListener implements LoadEventListener {
+public class TestLoadEventListener implements SaveOrUpdateEventListener {
+
     @Override
-    public void onLoad(LoadEvent loadEvent, LoadType loadType) throws HibernateException {
-
+    public void onSaveOrUpdate(SaveOrUpdateEvent saveOrUpdateEvent) throws HibernateException {
+        System.out.println("TestLoadEventListener.onSaveOrUpdate");
     }
 }
