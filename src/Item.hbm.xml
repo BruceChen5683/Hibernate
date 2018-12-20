@@ -1,9 +1,10 @@
-<?xml version="1.0" encoding="utf-8" ?>
+ <?xml version="1.0" encoding="utf-8" ?>
 <!DOCTYPE hibernate-mapping PUBLIC
         "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
         "http://hibernate.sourceforg.net/hibernate-mapping-3.0.dtd">
 <hibernate-mapping>
-    <class name="ml.battlecall.list.Item" table="qitem">
+    <!--乐观锁 已有的数据库上 增加乐观锁-->
+    <class name="ml.battlecall.list.Item" table="qitem" optimistic-lock="all">
 
         <id name="id" column="ID" type="string">
             <generator class="uuid"></generator>
