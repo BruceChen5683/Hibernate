@@ -38,5 +38,6 @@
     <orderEntry type="library" name="javassist" level="project" />
     <orderEntry type="library" name="jaxb-api-2.3.0" level="project" />
     <orderEntry type="library" name="javax.activation-1.2.0" level="project" />
+    <orderEntry type="library" name="ehcache-3.6.1" level="project" />
   </component>
 </module>

@@ -20,27 +20,27 @@ public class HibernateTest5 {
     public static void main(String[] args) {
 
 
-//        Employer employer = new Employer();
-//        employer.setName("hy");
-//
-//        Employer employer1 = new Employer();
-//        employer1.setName("hyyy");
-//
-//        EmIDCard emIDCard = new EmIDCard();
-//        emIDCard.setNumber(999);
-//
-//        employer.setEmIDCard(emIDCard);
-//        emIDCard.setEmployer(employer);
-//
-//        Team team = new Team();
-//        team.setName("mid");
-//
-//        team.setEmployers(new HashSet<Employer>());
-//        team.getEmployers().add(employer);
-//        team.getEmployers().add(employer1);
+        Employer employer = new Employer();
+        employer.setName("hy");
+
+        Employer employer1 = new Employer();
+        employer1.setName("hyyy");
+
+        EmIDCard emIDCard = new EmIDCard();
+        emIDCard.setNumber(999);
+
+        employer.setEmIDCard(emIDCard);
+        emIDCard.setEmployer(employer);
+
+        Team team = new Team();
+        team.setName("mid");
+
+        team.setEmployers(new HashSet<Employer>());
+        team.getEmployers().add(employer);
+        team.getEmployers().add(employer1);
 
 
-//        employer.setTeam(team);
+        employer.setTeam(team);
 
 
 
@@ -49,7 +49,7 @@ public class HibernateTest5 {
         Transaction transaction = null;
         try{
             transaction = session.beginTransaction();
-//            session.save(team);
+            session.save(team);
 
 
             /**
@@ -146,18 +146,18 @@ public class HibernateTest5 {
              *  QBC QBC QBC
              */
 
-            Criteria criteria = session.createCriteria(Employer.class)//employer整个表
-                            .add(Restrictions.eq("name","hy"))//限制条件 属性名字为hy
-                            .addOrder(Order.desc("id"));//降序
-
-
-            List list = criteria.list();
-
-            for (int i = 0;i < list.size();i++){
-                Employer employer = (Employer) list.get(i);
-                System.out.println("HibernateTest5.main  :"+ employer.getId());
-            }
-            System.out.println("HibernateTest5.main " + list.size());
+//            Criteria criteria = session.createCriteria(Employer.class)//employer整个表
+//                            .add(Restrictions.eq("name","hy"))//限制条件 属性名字为hy
+//                            .addOrder(Order.desc("id"));//降序
+//
+//
+//            List list = criteria.list();
+//
+//            for (int i = 0;i < list.size();i++){
+//                Employer employer = (Employer) list.get(i);
+//                System.out.println("HibernateTest5.main  :"+ employer.getId());
+//            }
+//            System.out.println("HibernateTest5.main " + list.size());
 
 
 

@@ -14,6 +14,9 @@
 
         <!--inverse true 一对多时，多的一方维持关系 -->
         <set name="employers" lazy="false" cascade="all" inverse="true" fetch="select">
+
+            <cache usage="read-only"></cache>
+
             <key column="team_id"></key>
             <one-to-many class="ml.battlecall.hibernate5.Employer"></one-to-many>
         </set>

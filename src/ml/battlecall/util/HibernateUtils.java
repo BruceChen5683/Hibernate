@@ -15,7 +15,7 @@ public class HibernateUtils {
 
     static {
         try {
-            sessionFactory = new Configuration().setInterceptor(new TestInterceptor()).configure().buildSessionFactory();
+            sessionFactory = new Configuration().configure().buildSessionFactory();
         }catch (Exception e){
             e.printStackTrace();
         }

@@ -14,12 +14,18 @@
         <!--1read uncommited 2 Read committed 4  8-->
         <!--<property name="hibernate.connection.isolation"></property>-->
 
-        <property name="format_sql">true</property>
+        <!--<property name="format_sql">true</property>-->
         <!--方言-->
         <property name="dialect">org.hibernate.dialect.MySQL5Dialect</property>
 
         <!--显示heibernate自动生产的sql-->
         <property name="show_sql">true</property>
+
+
+        <property name="hibernate.cache.use_second_level_cache">true</property>
+        <property name="cache.provider_class">
+            org.ehcache.core.Ehcache
+        </property>
 
 
 
@@ -72,7 +78,11 @@
 
         <!--<mapping resource="Person3.hbm.xml"></mapping>-->
 
-        <mapping resource="LockStudent.hbm.xml"></mapping>
+        <!--<mapping resource="LockStudent.hbm.xml"></mapping>-->
+
+        <mapping resource="EmIDCard.hbm.xml"></mapping>
+        <mapping resource="Employer.hbm.xml"></mapping>
+        <mapping resource="Team.hbm.xml"></mapping>
 
 
         <event type="save">

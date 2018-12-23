@@ -8,6 +8,6 @@ public class TestLoadEventListener implements SaveOrUpdateEventListener {
 
     @Override
     public void onSaveOrUpdate(SaveOrUpdateEvent saveOrUpdateEvent) throws HibernateException {
-        System.out.println("TestLoadEventListener.onSaveOrUpdate");
+//        System.out.println("TestLoadEventListener.onSaveOrUpdate");
     }
 }
