@@ -37,6 +37,7 @@ public class HiberateTest55 {
 //        }
 
 
+
         MyStudent  studentPrimaryKey = new MyStudent();
         studentPrimaryKey.setCardId("123456");
         studentPrimaryKey.setName("cjl");
