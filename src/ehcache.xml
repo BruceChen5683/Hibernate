@@ -2,7 +2,7 @@
 
 <ehcache>
 
-<diskStore path="~/IdeaProjects/ehcache"></diskStore>
+<diskStore path="my_ehcache_store"></diskStore>
 
 <defaultCache maxElementsInMemory="200" eternal="false"
               timeToIdleSeconds="50" timeToLiveSeconds="60" overflowToDisk="true"/>

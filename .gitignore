@@ -6,6 +6,7 @@
 .idea
 .idea/
 .idea/workspace.xml
+my_ehcache_store/
 *.iml
 out
 gen### Java template
