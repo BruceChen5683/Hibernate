@@ -4,6 +4,9 @@
         "http://hibernate.sourceforg.net/hibernate-mapping-3.0.dtd">
 <hibernate-mapping>
     <class name="ml.battlecall.hibernate5.Employer" table="employer">
+
+        <cache usage="read-only"></cache>
+
         <id name="id" column="id" type="string">
             <generator class="uuid"></generator>
         </id>
@@ -11,10 +14,10 @@
         </property>
 
         <!--fetch="select" constrained="true"-->
-        <one-to-one name="emIDCard" class="ml.battlecall.hibernate5.EmIDCard" cascade="all"></one-to-one>
+        <one-to-one name="emIDCard" class="ml.battlecall.hibernate5.EmIDCard" ></one-to-one>
 
         <!--fetch="join"-->
-        <many-to-one name="team" class="ml.battlecall.hibernate5.Team" column="team_id"   cascade="all"></many-to-one>
+        <many-to-one name="team" class="ml.battlecall.hibernate5.Team" column="team_id"  ></many-to-one>
 
 
     </class>

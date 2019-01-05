@@ -1,8 +1,8 @@
 package ml.battlecall;
 
-import ml.battlecall.hibernate5.EmIDCard;
-import ml.battlecall.hibernate5.Employer;
-import ml.battlecall.hibernate5.Team;
+
+import ml.battlecall.ehcache.Student;
+import ml.battlecall.ehcache.Team;
 import ml.battlecall.util.HibernateUtils;
 import org.hibernate.Criteria;
 import org.hibernate.Hibernate;
@@ -19,28 +19,22 @@ import java.util.List;
 public class HibernateTest5 {
     public static void main(String[] args) {
 
-
-        Employer employer = new Employer();
-        employer.setName("hy");
-
-        Employer employer1 = new Employer();
-        employer1.setName("hyyy");
-
-        EmIDCard emIDCard = new EmIDCard();
-        emIDCard.setNumber(999);
-
-        employer.setEmIDCard(emIDCard);
-        emIDCard.setEmployer(employer);
-
         Team team = new Team();
-        team.setName("mid");
+        team.setTeamName("mid");
 
-        team.setEmployers(new HashSet<Employer>());
-        team.getEmployers().add(employer);
-        team.getEmployers().add(employer1);
+        for (int i = 0;i < 500;i++){
+
+            Student employer = new Student();
+            employer.setName("hy"+i);
+            employer.setAge(1);
+            employer.setTeam(team);
 
 
-        employer.setTeam(team);
+
+            team.getStudents().add(employer);
+        }
+
+
 
 
 

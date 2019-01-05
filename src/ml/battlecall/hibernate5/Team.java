@@ -1,5 +1,8 @@
 package ml.battlecall.hibernate5;
 ;
+import org.hibernate.annotations.Cache;
+import org.hibernate.annotations.CacheConcurrencyStrategy;
+
 import java.util.Map;
 import java.util.Set;
 

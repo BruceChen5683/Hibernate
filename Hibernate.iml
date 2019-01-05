@@ -39,5 +39,8 @@
     <orderEntry type="library" name="jaxb-api-2.3.0" level="project" />
     <orderEntry type="library" name="javax.activation-1.2.0" level="project" />
     <orderEntry type="library" name="ehcache-3.6.1" level="project" />
+    <orderEntry type="library" name="hibernate-ehcache-5.2.16.Final" level="project" />
+    <orderEntry type="library" name="ehcache-core-2.6.11" level="project" />
+    <orderEntry type="library" name="slf4j-api-1.7.25" level="project" />
   </component>
 </module>
